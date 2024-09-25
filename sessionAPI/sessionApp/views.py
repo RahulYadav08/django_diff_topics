@@ -26,6 +26,6 @@ def display_item(request):
     return render(request, 'sessionApp/DisplayItem.html')
 
 
-def remove(request):
+# def remove(request):
 
 

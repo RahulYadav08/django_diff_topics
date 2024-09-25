@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+</head>
+<body>
+    {% for student in student_list%}
+    <li>
+        <ol>
+            {{student.id}}
+            {{student.firstName}}
+            {{student.lastName}}
+            {{student.testScore}}
+            
+        </ol>
+    </li>
+    {%endfor%}
+    
+</body>
+</html>
