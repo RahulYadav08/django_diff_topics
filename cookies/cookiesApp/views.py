@@ -2,6 +2,20 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import ItemForm
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .serializers import UserSerializer
+
+
+
+#View for registering users
+class RegisterUserView(APIView):
+    def post(self, request):
+        serializer = UserSerializer(data = request.data)
+        serializer.is_valid(raise_exception = True)
+        serializer.save()
+        return Response(serializer.data)
+
 # Create your views here.
 def create_cookie(request):
     request.session.set_test_cookie()
